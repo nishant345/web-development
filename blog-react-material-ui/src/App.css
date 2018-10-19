@@ -1,0 +1,12 @@
+.container{
+	margin-top: 1%;
+}
+.container p {
+	text-align: left;
+}
+.nav a {
+	color: #2892d7;
+}
+.show-grid .container{
+	width: 100%;
+}

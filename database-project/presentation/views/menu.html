@@ -1,0 +1,77 @@
+<!-- html for menu page: restaurant one details -->
+<div class="content">
+	<h1> Restaurant : Stehpizzeria Napoli</h1>
+	<ul>
+		<li>Reineckerstr. 40, 09126, Chemnitz</li>
+		<li>Tel: (0371) 570 21 11</li>
+		<li>Opening Days: Mon-Fri</li>
+		<li>Opening Time: 5:30 pm - 10:00pm</li>
+		<li><a href="http://www.stehpizzeria-napoli.de/index.php/home.html" target="new">Details</a></li>
+	</ul>
+	show Menu: <input type="checkbox" ng-model="showMenuOne" ng-init="showMenuOne = true">
+	<ul id="food-items" ng-if="showMenuOne">
+		<li ng-repeat="item in restaurantOneMenu" ng-show="item.items">
+			<h3>{{ item.heading }} </h3>
+			<div ng-show="item.items.rateMini">
+				<p>Mini Size Rate: {{ item.items.rateMini | currency: '€' }}</p>
+			</div>
+			<div ng-show="item.items.rateMax">
+				<p>Max Size Rate: {{ item.items.rateMax | currency: '€' }}</p>
+			</div>
+			<div ng-show="item.items.itemRate">
+				<p>&euro;{{ item.items.itemRate }}</p>
+			</div>
+			<p>{{item.items.itemDescription}}</p>
+			<span class="belt" style="background: crimson"> {{ item.items.itemName }}</span>
+		</li>
+	</ul>
+</div>
+<!-- html for menu page: restaurant two details -->
+<div class="content">
+	<h1> Restaurant : Bombay Palast</h1>
+	<ul>
+		<li>Road of Nations 41b, 09111, Chemnitz</li>
+		<li>Tel: (0371) 459 061 10</li>
+		<li>Opening Days: Daily</li>
+		<li>Opening Time: 11:30 - 14:30 &#38; 17:30 - 23:30</li>
+		<li><a href="https://bombay-palast.de/karte.html" target="new">Details</a></li>
+	</ul>
+	show Menu: <input type="checkbox" ng-model="showMenuTwo">
+	<ul id="food-items" ng-if="showMenuTwo">
+		<li ng-repeat="item in restaurantTwoMenu" ng-show="item.items">
+			<h3>{{ item.heading }} </h3>
+			<div ng-show="item.items.itemRate">
+				<p>&euro;{{ item.items.itemRate }}</p>
+			</div>
+			<p>{{item.items.itemDescription}}</p>
+			<span class="belt" style="background: crimson"> {{ item.items.itemName }}</span>
+		</li>
+	</ul>
+</div>
+<!-- html for menu page: restaurant three details -->
+<div class="content">
+	<h1> Restaurant : Maharadscha Palast</h1>
+	<ul>
+		<li>Zschopauer Straße 48, 09111 Chemnitz</li>
+		<li>Tel: (0371) 6 90 82-0 (-2)</li>
+		<li>Opening Days: Monday - Friday</li>
+		<li>Opening Time: 16.30-23.30</li>
+		<li><a href="https://maharadschapalast.de/" target="new">Details</a></li>
+	</ul>
+	show Menu: <input type="checkbox" ng-model="showMenuThree" ng-init="showMenuThree = true">
+	<ul id="food-items" ng-if="showMenuThree">
+		<li ng-repeat="item in restaurantThreeMenu" ng-show="item.items">
+			<div ng-switch on="item.items.itemRate">
+			    <div ng-switch-when="€">
+			    	<p>&euro;2,90</p>
+			    </div>
+			    <div ng-switch-default>
+			    	<p>&euro;{{ item.items.itemRate }}</p>
+			    </div>
+			</div>
+			<p>{{item.items.itemDescription}}</p>
+			<p>{{item.items.itemEnglishDesc}}</p>
+			<span class="belt" style="background: crimson"> {{ item.items.itemName }}</span>
+		</li>
+	</ul>
+</div>

@@ -1,0 +1,54 @@
+<!-- html for home page -->
+<div class="content list">
+	<input type="text" placeholder="Search" ng-submit="submit" ng-model="search">
+	<div style="text-align: center"> 
+		<button ng-click="updateDatabase()">Update Database</button>
+	</div>
+	<ul id="food-items" ng-show="search">
+		<!-- listing all searched item -->
+		<li ng-repeat="foodItem in foodItems | orderBy: name | filter: search"  
+		ng-click="getFoodItem(foodItem)">
+			<h3>{{ foodItem.heading }} </h3>
+			<div ng-show="foodItem.items.rateMini">
+				<p>Mini Size Rate: {{ foodItem.items.rateMini | currency: '€' }}</p>
+			</div>
+			<div ng-show="foodItem.items.rateMax">
+				<p>Max Size Rate: {{ foodItem.items.rateMax | currency: '€' }}</p>
+			</div>
+			<!-- <div >
+				<p>&euro;{{ foodItem.items.itemRate }}</p>
+			</div> -->
+			<div ng-switch on="foodItem.items.itemRate">
+			    <div ng-switch-when="&euro;">
+			    	<p>&euro;2,90</p>
+			    </div>
+			    <div ng-switch-default ng-show="foodItem.items.itemRate">
+			    	<p>&euro;{{ foodItem.items.itemRate }}</p>
+			    </div>
+			</div>
+			<p>{{foodItem.items.itemDescription}}</p>
+			<span class="belt" style="background: crimson"> {{ foodItem.items.itemName }}</span>
+		</li>
+	</ul>
+</div>
+<!-- html for modal dialog box -->
+<div id="dialog" title="You selected" ng-model="selectedFoodItem" ng-if="selectedFoodItem">
+	<div class="content">
+		<ul id="food-items">
+			<!-- listing selected item in a modal box -->
+			<li>Item: <h3>{{ selectedFoodItem.items.itemName }}</h3></li>
+			<li>Restaurant Name: <b>{{ selectedFoodItem.restaurantName }}</b></li>
+			<li>Address: {{ selectedFoodItem.contact.address.addressLineOne }}</li>
+			<li>Place: {{ selectedFoodItem.contact.address.addressLineTwo }}</li>
+			<li>Open: {{ selectedFoodItem.contact.address.openingDays }}</li>
+			<li>Opening Time:{{ selectedFoodItem.contact.address.openingTime }}</li>
+			<li>Tel: {{ selectedFoodItem.contact.address.telephoneNumber }}</li>
+			<li>Ingredients: {{ selectedFoodItem.items.itemDescription }}</li>
+			<li>{{ selectedFoodItem.items.itemEnglishDesc }}</li>
+			<li ng-show="selectedFoodItem.items.rateMini">Rate(Mini) : &euro;{{ selectedFoodItem.items.rateMini }}</li>
+			<li ng-show="selectedFoodItem.items.rateMax">Rate(Max) : &euro;{{ selectedFoodItem.items.rateMax }}</li>
+			<li ng-show="selectedFoodItem.items.itemRate">Rate : &euro;{{ selectedFoodItem.items.itemRate }}</li>
+			</li>
+		</ul>
+	</div>
+</div>

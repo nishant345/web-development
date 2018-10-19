@@ -1,0 +1,25 @@
+<!-- index.html mark up -->
+<html ng-app="foodApp">
+   <!-- head of the index page: all assets file imported here  -->
+   <head>
+      <title> Simply Order </title>
+      <!-- required css files for front-end -->
+      <link rel="stylesheet" href="libs/jquery-ui.css">
+      <link rel="stylesheet" type="text/css" href="style.css">
+      <!-- required script files for front-end -->
+      <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+      <script src="libs/jquery-ui.js"></script>
+      <script type="text/javascript" src="libs/angular.js"></script>
+      <script type="text/javascript" src="libs/angular-route.js"></script>
+      <script type="text/javascript" src="libs/angular-animate.js"></script>
+      <script type="text/javascript" src="main.js"></script>
+   </head>
+   <!-- body of index page : main view area of the app -->
+   <body ng-init>
+          <!-- include header -->
+         <header ng-include="'header.html'"></header>
+         <!-- include main view of the app -->
+         <main ng-view></main> 
+   </body>
+</html>
+
