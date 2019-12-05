@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Weather from './components/Weather';
 import Titles from './components/Titles';
 import Forms from './components/Forms';
