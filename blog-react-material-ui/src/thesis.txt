@@ -1,0 +1,42 @@
+Master Thesis
+
+Title: Processing of automotive signals for fault diagnosis using an automated probabilistic ML Framework
+
+Key points of the Thesis
+1.Search for parameters that provide the best model to be learned on which true insights can be gained.
+2.Define and code metrics on which process used for processing signals were evaluated.
+3.Different unsuoervised ML techniques were used for processing.
+
+What you did?
+A Framework was developed by my supervisor which I extended and provided the facility of parameter estimation. 
+This framework uses different process for consolidating automotive data and trys to extract meaningful 
+information from them for a ceratin use case. I provided the necessary parameters required for each process and
+evaluated each process on certain metrics. These metrics express the suitability/fitness of the processes 
+and parameters. This was done by searching and evaluating these parameters on a certain range and then selecting 
+the parameters that best fits the metric.
+
+How you did?
+A use case is an event that a test automobile experience. Automotive data was recorded as signals and their state 
+values for different timestamps. These datasets were presented to us for evaluation. Basically these datasets 
+reveal information on the signals taking time as one dimension. These signals were grouped in clusters based on
+their properties. Clustering is a unsupervised ML technique which groups entities. I opted different algorithms
+for clustering and there parameters. Now the best algorithm was chosen with its parameters. Once these signals 
+are clustered extraction of sequences of signals takes places. This is done keeping different time gaps/ windows 
+value. Let us understand by this. Suppose we have a dataset that contains signals which signify those signals 
+that lead to automotive lighting. For a particular time window we chose those signals after clustering the signals
+which are similar that can provide a reason for why these lights got activated. once we found out the sequences 
+we try to make structure or network graphs by using Bayesian Network. These graphs will tell us the paths or
+specifcations for reaching to that use case optimally and fastly. Parameters for the network making is the 
+threshold/percentage of edges to consider such that overfitting is less. Overfitting refers to providing sam results
+and no new result.
+
+
+Why you did?
+Reseachers generally focus  a great deal on accuracy and data in a ML research than on model(completely my observation
+). My supervisor worked more on accuracy and data while my focus was more on effective model building.
+
+A model in ML is the technique or technology used to first learn something on some training data and then predict with high 
+accuracy. My work was more focussed towards providing a more robus and effective model. This can be achieved by parameter
+providing the best and suotable parameters for each process. It will also maximize the learning process giving
+better results. Not only the learning process but the time involved for processing was significantly
+reduced by the automated. Three kinds of models were used i.e. clustering, PCA, and Bayesian Network.   
