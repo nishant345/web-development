@@ -4,7 +4,7 @@ import Request  from 'superagent';
 import _ from 'lodash';
 import './News.css';
 import NewsItem from './NewsItem';
-const API_KEY = 'cab7eeb9d98248f58c27746783f39b26';;
+const API_KEY = '';
 
 export default class News extends Component {
   state = {
